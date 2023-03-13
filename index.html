@@ -4,9 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Button2</title>
+<style>
+    :root {
+        --textSize: 140px;
+    }
+    
+    button {
+        font-size: 40px;
+    }
+
+    h1 {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: arial;
+        font-size: var(--textSize);
+        transition: .3s;
+        border: 0px solid black;
+    }
+
+    .larger:hover~h1 {
+        font-size: calc(var(--textSize)*2);
+    }    
+
+    .smaller:hover~h1 {
+        font-size: calc(var(--textSize)/2);
+    }
+
+    .border:hover~h1 {
+        border: 45px solid burlywood;
+    }
+
+</style>
+
 </head>
 <body>
-    
+    <button class="larger">2xGreater</button>
+    <button class="smaller">2xSmaller</button>
+    <button class="border">Border</button>
+    <h1>Name</h1>
 </body>
 </html>
