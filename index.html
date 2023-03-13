@@ -7,7 +7,7 @@
     <title>Button2</title>
 <style>
     :root {
-        --textSize: 140px;
+        --textSize: 80px;
     }
     
     button {
@@ -26,16 +26,28 @@
         border: 0px solid black;
     }
 
-    .larger:hover~h1 {
+    /* .larger:hover~h1 {
         font-size: calc(var(--textSize)*2);
-    }    
+    }     */
 
-    .smaller:hover~h1 {
-        font-size: calc(var(--textSize)/2);
+    h1.big {
+        font-size: 160px;
     }
 
-    .border:hover~h1 {
+    /* .smaller:hover~h1 {
+        font-size: calc(var(--textSize)/2);
+    } */
+
+    h1.smaller {
+        font-size: 40px;
+    }
+
+    /* .border:hover~h1 {
         border: 45px solid burlywood;
+    } */
+
+    h1.border {
+        border: 45px solid blueviolet;
     }
 
 </style>
@@ -46,5 +58,22 @@
     <button class="smaller">2xSmaller</button>
     <button class="border">Border</button>
     <h1>Name</h1>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script>
+        $(".larger").click(function(){
+            $('h1').toggleClass("big")
+        })
+
+        $(".smaller").click(function(){
+            $('h1').toggleClass("smaller")
+        })
+
+        $(".border").click(function(){
+            $('h1').toggleClass("border")
+        })
+    </script>
+    
 </body>
 </html>
